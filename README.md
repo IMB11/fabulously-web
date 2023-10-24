@@ -1,75 +1,18 @@
-# Nuxt 3 Minimal Starter
+# Fabulously Web
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This website is designed in Nuxt.js and is used to display information about the modpack and its mods.
 
-## Setup
+It uses Omorphia - Modrinth's design system.
 
-Make sure to install the dependencies:
+## Development
+
+We recommend you use `pnpm` when developing the website.
 
 ```bash
-# npm
-npm install
-
-# pnpm
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+pnpm dev
 ```
 
-## Development Server
+## Deployment
 
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+The website is automatically deployed to GitHub Pages when a commit is pushed to the `master` branch.
