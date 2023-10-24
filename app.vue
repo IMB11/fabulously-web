@@ -6,7 +6,9 @@ import "./app.scss";
 
 <template>
   <Navbar />
-  <div></div>
+  <div class="page">
+    <NuxtPage />
+  </div>
 </template>
 
 <style>
@@ -14,14 +16,18 @@ import "./app.scss";
   --color-brand: #d19321 !important;
 }
 
+.page {
+  padding: 5rem;
+}
+
 html {
   background-color: var(--color-bg);
   color: var(--color-base);
 }
 
-@media (max-width: 735px) {
-  .padded-mobile {
-    padding-bottom: 5em;
+@media (max-width: 999px) {
+  .page {
+    padding: 2.5rem;
   }
 }
 </style>

@@ -55,17 +55,29 @@ const theme = computed({
 </template>
 
 <style scoped lang="css">
-/* Make responsive navbar work. */
-@media only screen and (min-width: 736px) {
+/* Mobile Navbar */
+@media only screen and (min-width: 600px) {
   .nav-body {
-    display: none;
+    display: none !important;
   }
 }
 
 /* Hide no__mobile */
-@media only screen and (max-width: 735px) {
+@media only screen and (max-width: 600px) {
   .no__mobile {
     display: none !important;
+  }
+
+  .side__profile {
+    margin: auto;
+  }
+
+  .side__profile > .username {
+    /* Adjust font size to fit horizontally fully. */
+    /* Using vw */
+    margin: auto;
+    padding-left: auto;
+    font-size: 5cqw;
   }
 }
 
@@ -106,7 +118,7 @@ const theme = computed({
   vertical-align: middle;
 }
 
-@media only screen and (min-width: 736px) and (max-width: 800px) {
+@media only screen and (min-width: 600px) and (max-width: 800px) {
   .username {
     display: none;
   }
