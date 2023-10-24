@@ -9,6 +9,9 @@ for (const redirect of redirects) {
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/color-mode'],
+  nitro: {
+    preset: 'github-pages',
+  },
   colorMode: {
     preference: 'system',
     fallback: 'light',
