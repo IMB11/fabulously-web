@@ -1,5 +1,16 @@
 <script setup lang="ts">
-import { Card, Button, DownloadIcon, Modal } from "omorphia";
+import {
+  Card,
+  Button,
+  DownloadIcon,
+  Modal,
+  ClientIcon,
+  HeartIcon,
+  StarIcon,
+  SettingsIcon,
+  PaintBrushIcon,
+  LanguagesIcon,
+} from "omorphia";
 
 useSeoMeta({
   title: "Fabulously Optimized",
@@ -15,6 +26,7 @@ useSeoMeta({
 interface FeatureItem {
   title: string;
   image: string;
+  icon: any;
   description: string;
 }
 
@@ -23,36 +35,42 @@ const features: FeatureItem[] = [
   {
     title: "Optifine Parity",
     image: "/features/optifine-parity.webp",
+    icon: ClientIcon,
     description:
       "Fabulously Optimized is fully feature compatible with Optifine, including shaders, connected textures and zoom. You can even get your own free cape!",
   },
   {
     title: "High Performance",
     image: "/features/high-performance.webp",
+    icon: StarIcon,
     description:
       "Fabulously Optimized is built with performance in mind. We use the latest and greatest mods to make sure you get the best performance possible.",
   },
   {
     title: "Easy to Install",
     image: "/features/easy-to-install.webp",
+    icon: SettingsIcon,
     description:
       "Fabulously Optimized is easy to install. Available through the CurseForge launcher, Modrinth App, Prism, or MultiMC, you can install the modpack in a few clicks.",
   },
   {
     title: "Crowd Translated",
     image: "/features/crowd-translated.webp",
+    icon: LanguagesIcon,
     description:
       "Fabulously Optimized is translated in over 20 languages thanks to the community, including French, Spanish, German, Russian, and more.",
   },
   {
     title: "Open Development",
     image: "/features/open-development.webp",
+    icon: PaintBrushIcon,
     description:
       "Fabulously Optimized is open-source and so are most of its mods. We collaborate with mod developers to create a better user experience for everyone.",
   },
   {
     title: "Helpful Community",
     image: "/features/helpful-community.webp",
+    icon: HeartIcon,
     description:
       "Fabulously Optimized has a helpful community of players and developers that can help you with any issues you may have.",
   },
@@ -131,12 +149,11 @@ const features: FeatureItem[] = [
       :src="feature.image"
       class="dramatic-screenshot"
     />
-    <div v-if="features.indexOf(feature) % 2 === 1">
-      <h1>{{ feature.title }}</h1>
-      <p>{{ feature.description }}</p>
-    </div>
-    <div v-if="features.indexOf(feature) % 2 === 0">
-      <h1>{{ feature.title }}</h1>
+    <div>
+      <h1>
+        <component class="feature-icon" :is="feature.icon"></component
+        ><span>{{ feature.title }}</span>
+      </h1>
       <p>{{ feature.description }}</p>
     </div>
     <img
@@ -202,6 +219,22 @@ h3 {
 
     // Drop Shadow
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+  }
+
+  div {
+    .feature-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    h1 {
+      display: flex;
+      gap: var(--gap-md);
+      span {
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+    }
   }
 }
 
