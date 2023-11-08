@@ -5,11 +5,8 @@ import {
   Button,
   MoonIcon,
   SunIcon,
-  HomeIcon,
-  DashboardIcon,
-  ArchiveIcon,
-  SendIcon,
-  DownloadIcon,
+  LanguagesIcon,
+  OverflowMenu,
 } from "omorphia";
 
 const colorMode = useColorMode();
@@ -42,6 +39,42 @@ const theme = computed({
       <Button iconOnly class="button__rounded_icon" @click="theme = !theme"
         ><MoonIcon v-if="!theme" /><SunIcon v-else
       /></Button>
+      <OverflowMenu
+        class="btn icon-only button__rounded_icon"
+        style="background: none; box-shadow: none !important"
+        :options="[
+          {
+            id: 'play',
+            color: 'primary',
+            action: () => {},
+            hoverFilledOnly: true,
+          },
+          { divider: true },
+          {
+            id: 'duplicate',
+            action: () => {},
+          },
+          {
+            id: 'report',
+            action: () => {},
+          },
+          {
+            id: 'remain',
+            action: () => {},
+            remainOnClick: true,
+          },
+          { divider: true },
+          {
+            id: 'delete',
+            color: 'danger',
+            action: () => {},
+            hoverFilled: true,
+          },
+        ]"
+      >
+        <LanguagesIcon />
+        <!-- <template #cat>meow</template> -->
+      </OverflowMenu>
     </div>
   </Card>
 
@@ -83,20 +116,25 @@ const theme = computed({
   }
 }
 
-.button__rounded_icon {
-  border-radius: 50%;
-  box-shadow: none;
-  background-color: transparent;
-  transition: color 100ms ease-in-out;
+.button__rounded_icon,
+.popup-container {
+  border-radius: 50% !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+  transition: color 100ms ease-in-out !important;
 }
 
 .side__buttons {
+  display: flex;
+  flex-direction: row;
   margin-top: auto;
   margin-bottom: auto;
+  margin-block-end: inherit !important;
 }
 
-.button__rounded_icon:hover {
-  color: var(--color-brand);
+.button__rounded_icon:hover,
+.popup-container {
+  color: var(--color-brand) !important;
 }
 
 .nav-body {
