@@ -1,6 +1,17 @@
 <script setup lang="ts">
 import { Card, Button, DownloadIcon, Modal } from "omorphia";
 
+useSeoMeta({
+  title: "Fabulously Optimized",
+  ogTitle: "Fabulously Optimized",
+  description: `Fabulosuly Optimized is a high-performance Minecraft modpack that massively increases the peformance of the game whilst providing feature parity with Optifine using Sodium and Iris.`,
+  ogDescription: `Fabulosuly Optimized is a high-performance Minecraft modpack that massively increases the peformance of the game whilst providing feature parity with Optifine using Sodium and Iris.`,
+  ogImage: "/icon.png",
+  twitterCard: "summary",
+  twitterImage: "/icon.png",
+  themeColor: "#d19321",
+});
+
 interface FeatureItem {
   title: string;
   image: string;
