@@ -1,0 +1,113 @@
+@import "@/assets/graph.scss";
+
+/** Gradients **/
+.supercharge__gradient {
+  background: linear-gradient(
+    90deg,
+    #f5a50f 0%,
+    #d19321 25%,
+    #fceb01 50%,
+    #d19321 75%,
+    #e6f148 100%
+  );
+  // animate gradient
+  background-size: 200% auto;
+  animation: gradient 3s ease-in-out infinite;
+
+  // slight shadow to make it pop out
+  filter: drop-shadow(2px 2px 0px rgb(5, 5, 5));
+  // solid shadow though
+  // animation keyframes
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  font-size: 1.5em;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-right: 0.5rem;
+}
+
+.smaller__gradient {
+  // Blue gradient.
+  background: linear-gradient(
+    90deg,
+    #f5a50f 0%,
+    #d19321 25%,
+    #fceb01 50%,
+    #d19321 75%,
+    #e6f148 100%
+  );
+  // animate gradient
+  background-size: 200% auto;
+  animation: gradient 3s ease-in-out infinite;
+
+  // slight shadow to make it pop out
+  filter: drop-shadow(2px 2px 0px rgb(0, 0, 0));
+  // solid shadow though
+  // animation keyframes
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  font-size: 1.25em;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-right: 0.5rem;
+}
+
+// Make gradient text smaller on mobile.
+@media (max-width: 999px) {
+  .supercharge__gradient {
+    font-size: 1.1em;
+  }
+}
+
+.content {
+  background-color: transparent !important;
+}
+
+.download-card {
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
+
+a {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-decoration: none;
+  color: var(--color-brand);
+}
+
+a:hover > *,
+a:hover {
+  color: #805a13;
+  transition: color 100ms ease-in-out;
+}

@@ -9,6 +9,9 @@ import "./app.scss";
   <div class="page">
     <NuxtPage />
   </div>
+  <div class="footer">
+    <Footer />
+  </div>
 </template>
 
 <style>

@@ -32,9 +32,11 @@ const theme = computed({
     </NuxtLink>
     <div class="side no__mobile">
       <NuxtLink to="/" class="side__link">Home</NuxtLink>
-      <NuxtLink to="/changelog" class="side__link">Changelog</NuxtLink>
-      <NuxtLink to="/github" class="side__link">GitHub</NuxtLink>
-      <NuxtLink to="/wiki" class="side__link">Wiki</NuxtLink>
+      <!-- <NuxtLink to="/changelog" class="side__link">Changelog</NuxtLink> -->
+      <NuxtLink to="/github" :external="true" class="side__link"
+        >GitHub</NuxtLink
+      >
+      <NuxtLink to="/wiki" :external="true" class="side__link">Wiki</NuxtLink>
     </div>
     <div class="side__buttons no__mobile">
       <Button iconOnly class="button__rounded_icon" @click="theme = !theme"
