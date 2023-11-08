@@ -78,9 +78,9 @@ const features: FeatureItem[] = [
 </script>
 
 <template>
-  <Modal class="download_modal" header="Download" ref="download_modal"
+  <!-- <Modal class="download_modal" header="Download" ref="download_modal"
     ><DownloadSection
-  /></Modal>
+  /></Modal> -->
   <div class="columned-hero">
     <div class="column">
       <h1>
@@ -94,7 +94,7 @@ const features: FeatureItem[] = [
       </p>
       <br />
       <div class="buttons">
-        <Button color="primary" @click="$refs.download_modal.show()"
+        <!-- <Button color="primary" @click="$refs.download_modal.show()"
           ><DownloadIcon /> Download</Button
         >
         <Button
@@ -108,6 +108,16 @@ const features: FeatureItem[] = [
             })
           "
           >View on Modrinth</Button
+        > -->
+        <Button
+          color="green"
+          @click="navigateTo(`/modrinth`, { external: true })"
+          ><DownloadIcon />Modrinth</Button
+        >
+        <Button
+          color="orange"
+          @click="navigateTo(`/curseforge`, { external: true })"
+          ><DownloadIcon />CurseForge</Button
         >
       </div>
     </div>
@@ -169,7 +179,21 @@ const features: FeatureItem[] = [
       Fabulously Optimized is available on the Modrinth App, CurseForge
       Launcher, MultiMC, and Prism.
     </p>
-    <DownloadSection class="download-card-fix" />
+    <div class="buttons">
+      <Button
+        :large="true"
+        color="green"
+        @click="navigateTo(`/modrinth`, { external: true })"
+        >Modrinth</Button
+      >
+      <Button
+        :large="true"
+        color="orange"
+        @click="navigateTo(`/curseforge`, { external: true })"
+        >CurseForge</Button
+      >
+    </div>
+    <!-- <DownloadSection class="download-card-fix" /> -->
   </div>
 </template>
 
