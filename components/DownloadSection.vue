@@ -1,3 +1,5 @@
+<!-- TODO: If implementing, need to add translations. -->
+
 <script setup lang="ts">
 import {
   Toggle,

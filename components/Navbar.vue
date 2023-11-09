@@ -10,6 +10,8 @@ import {
 } from "omorphia";
 
 const colorMode = useColorMode();
+const { locales, locale } = useI18n();
+const switchLocalePath = useSwitchLocalePath();
 
 const theme = computed({
   get() {
@@ -18,6 +20,10 @@ const theme = computed({
   set(newValue) {
     colorMode.value = newValue ? "light" : "dark";
   },
+});
+
+const availableLocales = computed(() => {
+  return locales.value;
 });
 </script>
 
@@ -28,12 +34,16 @@ const theme = computed({
       <h2 class="username">Fabulously Optimized</h2>
     </NuxtLink>
     <div class="side no__mobile">
-      <NuxtLink to="/" class="side__link">Home</NuxtLink>
+      <NuxtLink to="/" class="side__link">{{
+        $t("navbar.links.home")
+      }}</NuxtLink>
       <!-- <NuxtLink to="/changelog" class="side__link">Changelog</NuxtLink> -->
       <NuxtLink to="/github" :external="true" class="side__link"
         >GitHub</NuxtLink
       >
-      <NuxtLink to="/wiki" :external="true" class="side__link">Wiki</NuxtLink>
+      <NuxtLink to="/wiki" :external="true" class="side__link">{{
+        $t("navbar.links.wiki")
+      }}</NuxtLink>
     </div>
     <div class="side__buttons no__mobile">
       <Button iconOnly class="button__rounded_icon" @click="theme = !theme"
@@ -44,36 +54,35 @@ const theme = computed({
         style="background: none; box-shadow: none !important"
         :options="[
           {
-            id: 'play',
+            id: 'language',
             color: 'primary',
-            action: () => {},
-            hoverFilledOnly: true,
+            action: () => {
+              navigateTo('/translate', {
+                external: true,
+                open: {
+                  target: '_blank',
+                },
+              });
+            },
+            hoverFilledOnly: false,
           },
           { divider: true },
-          {
-            id: 'duplicate',
-            action: () => {},
-          },
-          {
-            id: 'report',
-            action: () => {},
-          },
-          {
-            id: 'remain',
-            action: () => {},
-            remainOnClick: true,
-          },
-          { divider: true },
-          {
-            id: 'delete',
-            color: 'danger',
-            action: () => {},
-            hoverFilled: true,
-          },
+          ...availableLocales.map((locale) => ({
+            id: locale.id,
+            color: locale.id === locale.value ? 'green' : 'default',
+            action: () => {
+              switchLocalePath(locale.id);
+            },
+          })),
         ]"
       >
         <LanguagesIcon />
-        <!-- <template #cat>meow</template> -->
+        <template #language
+          ><LanguagesIcon />{{ $t("navbar.action.language") }}</template
+        >
+        <template v-for="locale of availableLocales" v-slot:[locale.id]>{{
+          locale.name
+        }}</template>
       </OverflowMenu>
     </div>
   </Card>
@@ -81,10 +90,14 @@ const theme = computed({
   <!-- Responsive version of the navbar for only mobile. -->
   <Card class="nav nav-body">
     <div class="side">
-      <NuxtLink to="/" class="side__link">Home</NuxtLink>
+      <NuxtLink to="/" class="side__link">{{
+        $t("navbar.links.home")
+      }}</NuxtLink>
       <NuxtLink to="/changelog" class="side__link">Changelog</NuxtLink>
       <NuxtLink to="/github" class="side__link">GitHub</NuxtLink>
-      <NuxtLink to="/wiki" class="side__link">Wiki</NuxtLink>
+      <NuxtLink to="/wiki" class="side__link">{{
+        $t("navbar.links.wiki")
+      }}</NuxtLink>
     </div>
   </Card>
 </template>

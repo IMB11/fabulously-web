@@ -22,4 +22,21 @@ export default defineNuxtConfig({
   routeRules: {
     ...redirectMap
   },
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        name: 'English',
+        file: 'en_us.json'
+      },
+    ],
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',
+    },
+    lazy: true,
+    langDir: 'lang',
+    defaultLocale: 'en'
+  },
 })

@@ -6,8 +6,7 @@ import { Avatar } from "omorphia";
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
-        Fabulously Optimized is not affiliated with Mojang Studios, Microsoft or
-        Modrinth.
+        {{ $t("footer.legal_notice") }}
       </p>
       <div class="image">
         <Avatar src="/icon.png"></Avatar>
@@ -15,18 +14,20 @@ import { Avatar } from "omorphia";
       </div>
       <div class="link-rows">
         <div class="link-row">
-          <h4>Contribute</h4>
+          <h4>{{ $t("footer.header.contribute") }}</h4>
           <NuxtLink to="/github">GitHub</NuxtLink>
-          <NuxtLink to="/translate">Translate</NuxtLink>
+          <NuxtLink to="/translate">{{
+            $t("footer.links.translate")
+          }}</NuxtLink>
         </div>
         <div class="link-row">
-          <h4>Discuss</h4>
+          <h4>{{ $t("footer.header.discuss") }}</h4>
           <NuxtLink to="/discord">Discord</NuxtLink>
           <NuxtLink to="/mastodon">Mastodon</NuxtLink>
-          <NuxtLink to="/wiki">Wiki</NuxtLink>
+          <NuxtLink to="/wiki">{{ $t("navbar.links.wiki") }}</NuxtLink>
         </div>
         <div class="link-row">
-          <h4>Download</h4>
+          <h4>{{ $t("footer.header.download") }}</h4>
           <NuxtLink to="/modrinth">Modrinth</NuxtLink>
           <NuxtLink to="/curseforge">CurseForge</NuxtLink>
         </div>

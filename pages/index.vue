@@ -24,55 +24,34 @@ useSeoMeta({
 });
 
 interface FeatureItem {
-  title: string;
-  image: string;
+  id: string;
   icon: any;
-  description: string;
 }
 
-// Todo, turn feature cards into this array.
 const features: FeatureItem[] = [
   {
-    title: "Optifine Parity",
-    image: "/features/optifine-parity.webp",
-    icon: ClientIcon,
-    description:
-      "Fabulously Optimized is fully feature compatible with Optifine, including shaders, connected textures and zoom. You can even get your own free cape!",
-  },
-  {
-    title: "High Performance",
-    image: "/features/high-performance.webp",
+    id: "high-performance",
     icon: StarIcon,
-    description:
-      "Fabulously Optimized is built with performance in mind. We use the latest and greatest mods to make sure you get the best performance possible.",
   },
   {
-    title: "Easy to Install",
-    image: "/features/easy-to-install.webp",
+    id: "optifine-parity",
+    icon: ClientIcon,
+  },
+  {
+    id: "works-anywhere",
     icon: SettingsIcon,
-    description:
-      "Fabulously Optimized is easy to install. Available through the CurseForge launcher, Modrinth App, Prism, or MultiMC, you can install the modpack in a few clicks.",
   },
   {
-    title: "Crowd Translated",
-    image: "/features/crowd-translated.webp",
+    id: "crowd-translated",
     icon: LanguagesIcon,
-    description:
-      "Fabulously Optimized is translated in over 20 languages thanks to the community, including French, Spanish, German, Russian, and more.",
   },
   {
-    title: "Open Development",
-    image: "/features/open-development.webp",
+    id: "open-development",
     icon: PaintBrushIcon,
-    description:
-      "Fabulously Optimized is open-source and so are most of its mods. We collaborate with mod developers to create a better user experience for everyone.",
   },
   {
-    title: "Helpful Community",
-    image: "/features/helpful-community.webp",
+    id: "helpful-community",
     icon: HeartIcon,
-    description:
-      "Fabulously Optimized has a helpful community of players and developers that can help you with any issues you may have.",
   },
 ];
 </script>
@@ -84,14 +63,13 @@ const features: FeatureItem[] = [
   <div class="columned-hero">
     <div class="column">
       <h1>
-        <span class="supercharge__gradient">Supercharge</span> your Minecraft
-        gameplay.
+        <span class="supercharge__gradient">{{
+          $t("content.home.columned-hero.supercharge")
+        }}</span>
+        &nbsp;
+        {{ $t("content.home.columned-hero.title") }}
       </h1>
-      <p class="subtitle">
-        Fabulosuly Optimized is a high-performance Minecraft modpack that
-        massively increases the peformance of the game whilst providing feature
-        parity with Optifine using Sodium and Iris.
-      </p>
+      <p class="subtitle">{{ $t("content.home.columned-hero.subtitle") }}}</p>
       <br />
       <div class="buttons">
         <!-- <Button color="primary" @click="$refs.download_modal.show()"
@@ -135,15 +113,18 @@ const features: FeatureItem[] = [
           <div class="bar"><p>56fps</p></div>
         </div>
         <div class="item">
-          <p class="pretitle">Vanilla</p>
+          <p class="pretitle">{{ $t("content.home.graph.vanilla") }}</p>
           <div class="bar"><p>49fps</p></div>
         </div>
       </div>
       <br />
       <div>
         <h3>
-          Fabulously Optimized is
-          <span class="smaller__gradient">4x quicker</span> than Optifine.<br />
+          Fabulously Optimized {{ $t("content.home.graph.title.is") }}
+          <span class="smaller__gradient"
+            >4x {{ $t("content.home.graph.title.quicker") }}</span
+          >
+          {{ $t("content.home.graph.title.than") }} Optifine.<br />
         </h3>
       </div>
       <small
@@ -156,28 +137,27 @@ const features: FeatureItem[] = [
   <div v-for="feature in features" class="feature-hero">
     <img
       v-if="features.indexOf(feature) % 2 === 1"
-      :src="feature.image"
+      :src="`/features/${feature.id}.webp`"
       class="dramatic-screenshot"
     />
     <div>
       <h1>
         <component class="feature-icon" :is="feature.icon"></component
-        ><span>{{ feature.title }}</span>
+        ><span>{{ $t(`feature.${feature.id}.title`) }}</span>
       </h1>
-      <p>{{ feature.description }}</p>
+      <p>{{ $t(`feature.${feature.id}.desc`) }}</p>
     </div>
     <img
       v-if="features.indexOf(feature) % 2 === 0"
-      :src="feature.image"
+      :src="`/features/${feature.id}.webp`"
       class="dramatic-screenshot"
     />
   </div>
   <div class="download-hero">
     <DownloadIcon />
-    <h1>Download Now</h1>
+    <h1>{{ $t("content.home.download.title") }}</h1>
     <p class="subtitle">
-      Fabulously Optimized is available on the Modrinth App, CurseForge
-      Launcher, MultiMC, and Prism.
+      {{ $t("content.home.download.subtitle") }}
     </p>
     <div class="buttons">
       <Button
