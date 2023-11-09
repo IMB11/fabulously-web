@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/color-mode', '@nuxtjs/i18n'],
   nitro: {
-    preset: 'github-pages',
+    preset: 'github-pages'
   },
   colorMode: {
     preference: 'system',

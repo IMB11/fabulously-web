@@ -93,7 +93,7 @@ const availableLocales = computed(() => {
       <NuxtLink to="/" class="side__link">{{
         $t("navbar.links.home")
       }}</NuxtLink>
-      <NuxtLink to="/changelog" class="side__link">Changelog</NuxtLink>
+      <!-- <NuxtLink to="/changelog" class="side__link">Changelog</NuxtLink> -->
       <NuxtLink to="/github" class="side__link">GitHub</NuxtLink>
       <NuxtLink to="/wiki" class="side__link">{{
         $t("navbar.links.wiki")
