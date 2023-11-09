@@ -23,6 +23,7 @@ export default defineNuxtConfig({
   routeRules: {
     ...redirectMap
   },
+  ssr: false,
   i18n: {
     locales: [
       {
