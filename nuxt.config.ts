@@ -11,7 +11,6 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/color-mode', '@nuxtjs/i18n'],
   nitro: {
     preset: 'github-pages',
-    baseURL: '/fabulously-web/'
   },
   colorMode: {
     preference: 'system',
@@ -23,7 +22,6 @@ export default defineNuxtConfig({
   routeRules: {
     ...redirectMap
   },
-  ssr: false,
   i18n: {
     locales: [
       {
