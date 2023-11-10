@@ -1,22 +1,44 @@
 <script setup lang="ts">
 import {
-  Card,
   Button,
   DownloadIcon,
-  Modal,
   ClientIcon,
-  HeartIcon,
-  StarIcon,
-  SettingsIcon,
+  UsersIcon,
+  ChartIcon,
+  LightBulbIcon,
+  VersionIcon,
   PaintBrushIcon,
-  LanguagesIcon,
+  renderHighlightedString,
+  UpdatedIcon,
 } from "omorphia";
+
+import FabricIcon from "../components/FabricIcon.vue";
+import ImportIcon from "../components/ImportIcon.vue";
+
+const featureLinks =
+  ref(`\n\n[1]: https://github.com/Fabulously-Optimized/fabulously-optimized/blob/main/INCLUDED-MODS.md#smooth
+[2]: https://fabulously-optimized.gitbook.io/modpack/readme/give-up-optifine
+[3]: https://fabulously-optimized.gitbook.io/modpack/readme/free-cape
+[4]: https://github.com/Fabulously-Optimized/fabulously-optimized/blob/main/INCLUDED-MODS.md#functional
+[5]: https://github.com/Fabulously-Optimized/fabulously-optimized#downloads
+[6]: https://github.com/Fabulously-Optimized/fabulously-optimized/blob/main/CHANGELOG.md
+[7]: https://fabulously-optimized.gitbook.io/modpack/readme/update-instructions
+[8]: https://fabulously-optimized.gitbook.io/modpack/readme/adding-more-mods
+[9]: https://github.com/Fabulously-Optimized/fabulously-optimized
+[10]: https://fabulously-optimized.gitbook.io/modpack/readme/language-support
+[11]: https://discord.gg/fabulously-optimized-859124104644788234
+[12]: https://fabulously-optimized.gitbook.io/modpack
+[13]: https://github.com/Fabulously-Optimized/fabulously-optimized/blob/main/INCLUDED-MODS.md
+[14]: https://github.com/Fabulously-Optimized/fabulously-optimized/blob/main/CONTRIBUTING.md
+[15]: https://fabulously-optimized.gitbook.io/modpack/readme/server-setup
+[16]: https://www.bisecthosting.com/clients/aff.php?aff=2604
+[17]: https://github.com/Fabulously-Optimized/fabulously-optimized#disclaimers`);
 
 useSeoMeta({
   title: "Fabulously Optimized",
   ogTitle: "Fabulously Optimized",
-  description: `Fabulosuly Optimized is a high-performance Minecraft modpack that massively increases the peformance of the game whilst providing feature parity with Optifine using Sodium and Iris.`,
-  ogDescription: `Fabulosuly Optimized is a high-performance Minecraft modpack that massively increases the peformance of the game whilst providing feature parity with Optifine using Sodium and Iris.`,
+  description: `A simple Minecraft modpack focusing on performance and graphics enhancements.`,
+  ogDescription: `A simple Minecraft modpack focusing on performance and graphics enhancements.`,
   ogImage: "/icon.png",
   twitterCard: "summary",
   twitterImage: "/icon.png",
@@ -28,32 +50,40 @@ interface FeatureItem {
   icon: any;
 }
 
-const features: FeatureItem[] = [
+const features: any = ref([
   {
-    id: "high-performance",
-    icon: StarIcon,
+    id: "performance",
+    icon: ChartIcon,
   },
   {
     id: "optifine-parity",
-    icon: ClientIcon,
-  },
-  {
-    id: "works-anywhere",
-    icon: SettingsIcon,
-  },
-  {
-    id: "crowd-translated",
-    icon: LanguagesIcon,
-  },
-  {
-    id: "open-development",
     icon: PaintBrushIcon,
   },
   {
-    id: "helpful-community",
-    icon: HeartIcon,
+    id: "feels-familiar",
+    icon: LightBulbIcon,
   },
-];
+  {
+    id: "works-anywhere",
+    icon: ClientIcon,
+  },
+  {
+    id: "up-to-date",
+    icon: UpdatedIcon,
+  },
+  {
+    id: "built-on-fabric",
+    icon: FabricIcon,
+  },
+  {
+    id: "open-development",
+    icon: VersionIcon,
+  },
+  {
+    id: "helpful-community",
+    icon: UsersIcon,
+  },
+]);
 </script>
 
 <template>
@@ -66,10 +96,9 @@ const features: FeatureItem[] = [
         <span class="supercharge__gradient">{{
           $t("content.home.columned-hero.supercharge")
         }}</span>
-        &nbsp;
         {{ $t("content.home.columned-hero.title") }}
       </h1>
-      <p class="subtitle">{{ $t("content.home.columned-hero.subtitle") }}}</p>
+      <p class="subtitle">{{ $t("content.home.columned-hero.subtitle") }}</p>
       <br />
       <div class="buttons">
         <!-- <Button color="primary" @click="$refs.download_modal.show()"
@@ -123,8 +152,7 @@ const features: FeatureItem[] = [
           Fabulously Optimized {{ $t("content.home.graph.title.is") }}
           <span class="smaller__gradient"
             >4x {{ $t("content.home.graph.title.quicker") }}</span
-          >
-          {{ $t("content.home.graph.title.than") }} Optifine.<br />
+          >{{ $t("content.home.graph.title.than") }} Optifine.<br />
         </h3>
       </div>
       <small
@@ -134,26 +162,33 @@ const features: FeatureItem[] = [
       >
     </div>
   </div>
-  <div v-for="feature in features" class="feature-hero">
-    <img
-      v-if="features.indexOf(feature) % 2 === 1"
-      :src="`/features/${feature.id}.webp`"
-      class="dramatic-screenshot"
-    />
-    <div>
-      <h1>
-        <component class="feature-icon" :is="feature.icon"></component
-        ><span>{{ $t(`feature.${feature.id}.title`) }}</span>
-      </h1>
-      <p>{{ $t(`feature.${feature.id}.desc`) }}</p>
-    </div>
-    <img
+  <div class="centered-hero">
+    <h1>{{ $t("content.home.features.title") }}</h1>
+    <div class="features">
+      <div v-for="feature in features" class="feature-block">
+        <div>
+          <h1>
+            <component class="feature-icon" :is="feature.icon"></component
+            ><span>{{ $t(`feature.${feature.id}.title`) }}</span>
+          </h1>
+          <div
+            class="markdown-body"
+            v-html="
+              renderHighlightedString(
+                $t(`feature.${feature.id}.desc`) + featureLinks
+              )
+            "
+          ></div>
+        </div>
+        <!-- <img
       v-if="features.indexOf(feature) % 2 === 0"
       :src="`/features/${feature.id}.webp`"
       class="dramatic-screenshot"
-    />
+    /> -->
+      </div>
+    </div>
   </div>
-  <div class="download-hero">
+  <div class="centered-hero" style="margin-top: 5rem">
     <DownloadIcon />
     <h1>{{ $t("content.home.download.title") }}</h1>
     <p class="subtitle">
@@ -178,15 +213,12 @@ const features: FeatureItem[] = [
 </template>
 
 <style scoped lang="scss">
-.download-hero {
-  margin-top: 15rem;
-
-  // Center everything.
+.centered-hero {
+  // Center everything along a column.
   display: flex;
   flex-direction: column;
-  align-items: center;
-
   gap: var(--gap-xl);
+  align-items: center;
 
   // Make icon big.
   svg {
@@ -203,27 +235,41 @@ h3 {
   color: white !important;
 }
 
-.feature-hero {
+.features {
+  // Two columned grid.
+  padding: 9%;
+  padding-top: 0;
+
+  // make sure text isn't long widthwise
+  max-width: 75vw;
+
+  // align everything center
+  margin-left: auto;
+  margin-right: auto;
+
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
+  gap: 0;
+}
+
+.feature-block {
   gap: var(--gap-xl);
   align-items: center;
-  margin-top: var(--gap-xl);
-  margin-bottom: var(--gap-xl);
+  padding-right: 2%;
 
-  img {
-    width: 85%;
-    height: 85%;
-    margin-left: auto;
-    margin-right: auto;
-    object-fit: cover;
+  // img {
+  //   width: 85%;
+  //   height: 85%;
+  //   margin-left: auto;
+  //   margin-right: auto;
+  //   object-fit: cover;
 
-    border-radius: var(--gap-xl);
+  //   border-radius: var(--gap-xl);
 
-    // Drop Shadow
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
-  }
+  //   // Drop Shadow
+  //   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+  // }
 
   div {
     .feature-icon {
@@ -263,14 +309,16 @@ h3 {
     display: none !important;
   }
 
-  .feature-hero {
+  .features {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+    padding: 0 !important;
+    padding-top: 5rem !important;
   }
 
-  .feature-hero > img {
-    display: none !important;
-  }
+  // .feature-block > img {
+  //   display: none !important;
+  // }
 }
 
 .column {

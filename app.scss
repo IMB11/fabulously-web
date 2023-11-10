@@ -98,16 +98,6 @@
   border-top-right-radius: 0px !important;
 }
 
-a {
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  text-decoration: none;
-  color: var(--color-brand);
-}
-
-a:hover > *,
-a:hover {
-  color: #805a13;
-  transition: color 100ms ease-in-out;
+.markdown-body a {
+  color: var(--color-brand) !important;
 }
