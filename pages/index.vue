@@ -15,8 +15,8 @@ import {
 useSeoMeta({
   title: "Fabulously Optimized",
   ogTitle: "Fabulously Optimized",
-  description: `Fabulosuly Optimized is a high-performance Minecraft modpack that massively increases the peformance of the game whilst providing feature parity with Optifine using Sodium and Iris.`,
-  ogDescription: `Fabulosuly Optimized is a high-performance Minecraft modpack that massively increases the peformance of the game whilst providing feature parity with Optifine using Sodium and Iris.`,
+  description: `A simple Minecraft modpack focusing on performance and graphics enhancements.`,
+  ogDescription: `A simple Minecraft modpack focusing on performance and graphics enhancements.`,
   ogImage: "/icon.png",
   twitterCard: "summary",
   twitterImage: "/icon.png",
@@ -30,7 +30,7 @@ interface FeatureItem {
 
 const features: FeatureItem[] = [
   {
-    id: "high-performance",
+    id: "performance",
     icon: StarIcon,
   },
   {
@@ -38,12 +38,20 @@ const features: FeatureItem[] = [
     icon: ClientIcon,
   },
   {
+    id: "feels-familiar",
+    icon: SettingsIcon,
+  },
+  {
     id: "works-anywhere",
     icon: SettingsIcon,
   },
   {
-    id: "crowd-translated",
+    id: "up-to-date",
     icon: LanguagesIcon,
+  },
+  {
+    id: "built-on-fabric",
+    icon: PaintBrushIcon,
   },
   {
     id: "open-development",
