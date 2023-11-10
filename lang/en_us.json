@@ -19,7 +19,7 @@
   "feature.performance.title": "Performance",
   "feature.performance.desc": "Fabulously Optimized is faster than OptiFine, thanks to [modern performance mods][1] like Sodium, Lithium, and others. The bundled mods have been carefully selected to be safe in your worlds and provide noticeable speed benefits on any device.",
   "feature.optifine-parity.title": "Optifine parity",
-  "feature.optifine-parity.desc": "Fabulously Optimized [supports most OptiFine features][2], including shaders, connected textures, and zoom. If your resource pack states "OptiFine required," it will probably function here as well. [You can even get your own free cape!][3]",
+  "feature.optifine-parity.desc": "Fabulously Optimized [supports most OptiFine features][2], including shaders, connected textures, and zoom. If your resource pack states \"OptiFine required,\" it will probably function here as well. [You can even get your own free cape!][3]",
   "feature.feels-familiar.title": "Feels familiar",
   "feature.feels-familiar.desc": "Fabulously Optimized [includes features that allow you to experience Minecraft just as you remember it][4], no matter what version you've used before. This means you can use game controllers, play local worlds with friends, view advancements in a large window, and much more.",
   "feature.works-everywhere.title": "Works everywhere",
