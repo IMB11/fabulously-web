@@ -18,7 +18,7 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "omorphia": "^0.6.2",
+    "omorphia": "^0.6.5",
     "sass": "^1.69.4"
   }
 }
