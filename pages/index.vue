@@ -3,9 +3,10 @@ import {
   Button,
   DownloadIcon,
   ClientIcon,
-  HeartIcon,
-  StarIcon,
-  SettingsIcon,
+  UsersIcon,
+  ChartIcon,
+  LightBulbIcon,
+  VersionIcon,
   PaintBrushIcon,
   renderHighlightedString,
   UpdatedIcon,
@@ -52,19 +53,19 @@ interface FeatureItem {
 const features: any = ref([
   {
     id: "performance",
-    icon: StarIcon,
+    icon: ChartIcon,
   },
   {
     id: "optifine-parity",
-    icon: ClientIcon,
+    icon: PaintBrushIcon,
   },
   {
     id: "feels-familiar",
-    icon: SettingsIcon,
+    icon: LightBulbIcon,
   },
   {
     id: "works-anywhere",
-    icon: ImportIcon,
+    icon: ClientIcon,
   },
   {
     id: "up-to-date",
@@ -76,11 +77,11 @@ const features: any = ref([
   },
   {
     id: "open-development",
-    icon: PaintBrushIcon,
+    icon: VersionIcon,
   },
   {
     id: "helpful-community",
-    icon: HeartIcon,
+    icon: UsersIcon,
   },
 ]);
 </script>
