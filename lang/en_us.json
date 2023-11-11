@@ -7,6 +7,10 @@
   "footer.header.download": "Download",
   "footer.links.translate": "Translate",
   "footer.legal_notice": "Fabulously Optimized is not affiliated with Mojang Studios, Microsoft or Modrinth.",
+  "content.contributors.columned-hero.title": "These people are truly amazing...",
+  "content.contributors.columned-hero.subtitle": "Fabulously Optimized is a community effort, and we couldn't have done it without these people.",
+  "content.contributors.org": "Organization Members",
+  "content.contributors": "Contributors",
   "content.home.columned-hero.supercharge": "Supercharge",
   "content.home.columned-hero.title": "your Minecraft gameplay.",
   "content.home.columned-hero.subtitle": "A simple Minecraft modpack focusing on performance and graphics enhancements.",
@@ -31,6 +35,7 @@
   "feature.built-on-fabric.desc": "Fabulously Optimized uses the Fabric mod loader, which is lightweight, fast and supports a lot of mods. That means you can use the modpack as a base [to add your favorite mods onto.][8]",
   "feature.open-development.title": "Open Development",
   "feature.open-development.desc": "Fabulously Optimized [is open-source][9], and so are most of its mods. We welcome user suggestions and collaborate with mod developers to create a better user experience for everyone.",
+  "feature.open-development.btn": "View Contributors",
   "feature.helpful-community.title": "Helpful Community",
-  "feature.helpful-community.desc": "We have a growing community of friendly members who enjoy discussing the pack, [translating its content][10], and helping each other. [Join us today!][11]",
+  "feature.helpful-community.desc": "We have a growing community of friendly members who enjoy discussing the pack, [translating its content][10], and helping each other. [Join us today!][11]"
 }
