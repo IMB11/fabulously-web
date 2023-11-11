@@ -330,12 +330,15 @@ h3 {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     padding: 0 !important;
-    padding-top: 5rem !important;
   }
 
-  // .feature-block > img {
-  //   display: none !important;
-  // }
+  // Hide video on mobile.
+  .centered-hero {
+    margin-top: 5rem !important;
+    iframe {
+      display: none !important;
+    }
+  }
 }
 
 .column {
