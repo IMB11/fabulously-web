@@ -157,13 +157,22 @@ const features: any = ref([
       </div>
       <small
         >AMD Ryzen 5 2600 (12) @ 3.400GH and NVIDIA GeForce GTX 1060 3GB running
-        Minecraft 1.20.1, Optifine for 1.20.2, Fabric Loader with Fabulously
-        Optimized 5.5.0-beta.1. RD:8, Singleplayer, PLd</small
+        Minecraft 1.20.1, Optifine for 1.20.1, Fabric Loader with Fabulously
+        Optimized 5.4.1 RD:8, Singleplayer, PLd</small
       >
     </div>
   </div>
   <div class="centered-hero">
     <h1>{{ $t("content.home.features.title") }}</h1>
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/bb8G9X5Q_4I?si=rG5ZcuF9G5lfQxBV"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
     <div class="features">
       <div v-for="feature in features" class="feature-block">
         <div>
@@ -224,6 +233,14 @@ const features: any = ref([
   svg {
     width: 5rem;
     height: 5rem;
+  }
+
+  iframe {
+    // Ratio: (560px by 315px) / 2
+    width: calc(75vw / 1.5);
+    height: calc(42.1875vw / 1.5);
+    max-width: 100%;
+    border-radius: var(--gap-xl);
   }
 }
 
