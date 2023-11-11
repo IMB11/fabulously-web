@@ -249,7 +249,7 @@ const features: any = ref([
 }
 
 h3 {
-  color: white !important;
+  color: var(--color-contrast) !important;
 }
 
 .features {
