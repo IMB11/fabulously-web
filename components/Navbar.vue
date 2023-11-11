@@ -18,7 +18,7 @@ const theme = computed({
     return colorMode.value !== "dark";
   },
   set(newValue) {
-    colorMode.value = newValue ? "light" : "dark";
+    colorMode.preference = newValue ? "light" : "dark";
   },
 });
 
