@@ -10,10 +10,10 @@ import {
   PaintBrushIcon,
   renderHighlightedString,
   UpdatedIcon,
+  DiscordIcon,
 } from "omorphia";
 
 import FabricIcon from "../components/FabricIcon.vue";
-import ImportIcon from "../components/ImportIcon.vue";
 
 const featureLinks =
   ref(`\n\n[1]: https://github.com/Fabulously-Optimized/fabulously-optimized/blob/main/INCLUDED-MODS.md#smooth
@@ -78,6 +78,11 @@ const features: any = ref([
   {
     id: "open-development",
     icon: VersionIcon,
+    button: {
+      color: "black",
+      href: "/contributors",
+      external: false,
+    },
   },
   {
     id: "helpful-community",
@@ -138,7 +143,7 @@ const features: any = ref([
           </div>
         </div>
         <div class="item">
-          <p class="pretitle">Optifine</p>
+          <p class="pretitle">OptiFine</p>
           <div class="bar"><p>56fps</p></div>
         </div>
         <div class="item">
@@ -152,12 +157,12 @@ const features: any = ref([
           Fabulously Optimized {{ $t("content.home.graph.title.is") }}
           <span class="smaller__gradient"
             >4x {{ $t("content.home.graph.title.quicker") }}</span
-          >{{ $t("content.home.graph.title.than") }} Optifine.<br />
+          >{{ $t("content.home.graph.title.than") }} OptiFine.<br />
         </h3>
       </div>
       <small
         >AMD Ryzen 5 2600 (12) @ 3.400GH and NVIDIA GeForce GTX 1060 3GB running
-        Minecraft 1.20.1, Optifine for 1.20.1, Fabric Loader with Fabulously
+        Minecraft 1.20.1, OptiFine for 1.20.1, Fabric Loader with Fabulously
         Optimized 5.4.1 RD:8, Singleplayer, PLd</small
       >
     </div>
@@ -188,6 +193,22 @@ const features: any = ref([
               )
             "
           ></div>
+          <br />
+          <Button
+            v-if="feature.button"
+            :large="true"
+            :color="feature.button.color"
+            @click="
+              navigateTo(feature.button.href, {
+                external: feature.button.external,
+              })
+            "
+            ><component
+              :is="feature.button.icon"
+              v-if="feature.button.icon != undefined"
+            ></component>
+            {{ $t(`feature.${feature.id}.btn`) }}</Button
+          >
         </div>
         <!-- <img
       v-if="features.indexOf(feature) % 2 === 0"
@@ -222,28 +243,6 @@ const features: any = ref([
 </template>
 
 <style scoped lang="scss">
-.centered-hero {
-  // Center everything along a column.
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap-xl);
-  align-items: center;
-
-  // Make icon big.
-  svg {
-    width: 5rem;
-    height: 5rem;
-  }
-
-  iframe {
-    // Ratio: (560px by 315px) / 2
-    width: calc(75vw / 1.5);
-    height: calc(42.1875vw / 1.5);
-    max-width: 100%;
-    border-radius: var(--gap-xl);
-  }
-}
-
 .download-card-fix {
   border-radius: var(--gap-xl) !important;
 }
@@ -343,14 +342,6 @@ h3 {
 
 .column {
   display: block;
-}
-
-.subtitle {
-  font-size: 1.5rem;
-  font-weight: 400;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  color: var(--color-base);
 }
 
 .buttons {

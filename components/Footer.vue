@@ -38,6 +38,8 @@ import { Avatar } from "omorphia";
 
 <style scoped lang="scss">
 .footer {
+  border-top-right-radius: var(--gap-xl);
+  border-top-left-radius: var(--gap-xl);
   text-align: center;
   background-color: var(--color-raised-bg);
   color: var(--color-base);

@@ -8,7 +8,7 @@ for (const redirect of redirects) {
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@nuxtjs/color-mode', '@nuxtjs/i18n'],
+  modules: ['@nuxtjs/color-mode', '@nuxtjs/i18n', "@nuxt/image"],
   nitro: {
     preset: 'github-pages',
   },
