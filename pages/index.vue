@@ -334,9 +334,9 @@ h3 {
   // Hide video on mobile.
   .centered-hero {
     margin-top: 5rem !important;
-    iframe {
-      display: none !important;
-    }
+    // iframe {
+    //   display: none !important;
+    // }
   }
 }
 
