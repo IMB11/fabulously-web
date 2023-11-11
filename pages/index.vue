@@ -138,7 +138,7 @@ const features: any = ref([
           </div>
         </div>
         <div class="item">
-          <p class="pretitle">Optifine</p>
+          <p class="pretitle">OptiFine</p>
           <div class="bar"><p>56fps</p></div>
         </div>
         <div class="item">
@@ -152,12 +152,12 @@ const features: any = ref([
           Fabulously Optimized {{ $t("content.home.graph.title.is") }}
           <span class="smaller__gradient"
             >4x {{ $t("content.home.graph.title.quicker") }}</span
-          >{{ $t("content.home.graph.title.than") }} Optifine.<br />
+          >{{ $t("content.home.graph.title.than") }} OptiFine.<br />
         </h3>
       </div>
       <small
         >AMD Ryzen 5 2600 (12) @ 3.400GH and NVIDIA GeForce GTX 1060 3GB running
-        Minecraft 1.20.1, Optifine for 1.20.1, Fabric Loader with Fabulously
+        Minecraft 1.20.1, OptiFine for 1.20.1, Fabric Loader with Fabulously
         Optimized 5.4.1 RD:8, Singleplayer, PLd</small
       >
     </div>
