@@ -10,8 +10,7 @@ import {
 } from "omorphia";
 
 const colorMode = useColorMode();
-const { locales, locale } = useI18n();
-const switchLocalePath = useSwitchLocalePath();
+const { locales, locale: currentLocale, setLocale } = useI18n();
 
 const theme = computed({
   get() {
@@ -25,6 +24,21 @@ const theme = computed({
 const availableLocales = computed(() => {
   return locales.value;
 });
+
+const languageOptionFilter = computed(() => {
+  console.log(availableLocales.value);
+  return availableLocales.value.map((locale: any) => ({
+    id: locale.code,
+    color: locale.code === currentLocale.value ? "green" : "",
+    action: () => {
+      console.log(locale.code);
+      setLocale(locale.code);
+    },
+    hoverFilledOnly: false,
+  }));
+});
+
+console.log(languageOptionFilter.value);
 </script>
 
 <template>
@@ -67,21 +81,15 @@ const availableLocales = computed(() => {
             hoverFilledOnly: false,
           },
           { divider: true },
-          ...availableLocales.map((locale) => ({
-            id: locale.id,
-            color: locale.id === locale.value ? 'green' : 'default',
-            action: () => {
-              switchLocalePath(locale.id);
-            },
-          })),
+          ...languageOptionFilter,
         ]"
       >
         <LanguagesIcon />
         <template #language
           ><LanguagesIcon />{{ $t("navbar.action.language") }}</template
         >
-        <template v-for="locale of availableLocales" v-slot:[locale.id]>{{
-          locale.name
+        <template v-for="_locale of availableLocales" v-slot:[_locale.code]>{{
+          _locale.name
         }}</template>
       </OverflowMenu>
     </div>

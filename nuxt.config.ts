@@ -29,13 +29,26 @@ export default defineNuxtConfig({
         name: 'English',
         file: 'en_us.json'
       },
+      {
+        code: 'ms',
+        name: 'Melayu',
+        file: 'ms_my.json'
+      }
     ],
     detectBrowserLanguage: {
+      // If enabled, a cookie is set once a user has been redirected to his
+      // preferred language to prevent subsequent redirections
+      // Set to false to redirect every time
       useCookie: true,
+      // Cookie name
       cookieKey: 'i18n_redirected',
-      redirectOn: 'root',
+      // Set to always redirect to value stored in the cookie, not just once
+      alwaysRedirect: false,
+      // If no locale for the browsers locale is a match, use this one as a fallback
+      fallbackLocale: 'en'
     },
     lazy: true,
+    strategy: 'no_prefix',
     langDir: 'lang',
     defaultLocale: 'en'
   },
