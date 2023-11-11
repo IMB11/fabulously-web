@@ -28,11 +28,6 @@ export default defineNuxtConfig({
         code: 'en',
         name: 'English',
         file: 'en_us.json'
-      },
-      {
-        code: 'ms',
-        name: 'Melayu',
-        file: 'ms_my.json'
       }
     ],
     detectBrowserLanguage: {
