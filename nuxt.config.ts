@@ -23,6 +23,7 @@ export default defineNuxtConfig({
     ...redirectMap
   },
   i18n: {
+    vueI18n: 'old.i18n.config.ts',
     locales: [
       {
         code: 'en',
