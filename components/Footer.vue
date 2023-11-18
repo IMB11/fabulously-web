@@ -8,10 +8,6 @@ import { Avatar } from "omorphia";
       <p>
         {{ $t("footer.legal_notice") }}
       </p>
-      <div class="image">
-        <Avatar src="/icon.png"></Avatar>
-        <h2 class="username">Fabulously Optimized</h2>
-      </div>
       <div class="link-rows">
         <div class="link-row">
           <h4>{{ $t("footer.header.contribute") }}</h4>
