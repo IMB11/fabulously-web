@@ -28,6 +28,11 @@ export default defineNuxtConfig({
         code: 'en',
         name: 'English',
         file: 'en_us.json'
+      },
+      {
+        code: 'et_ee',
+        name: 'Eesti keel',
+        file: 'et_ee.json'
       }
     ],
     detectBrowserLanguage: {
