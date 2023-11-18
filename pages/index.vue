@@ -18,21 +18,20 @@ import FabricIcon from "../components/FabricIcon.vue";
 const featureLinks =
   ref(`\n\n[1]: https://github.com/Fabulously-Optimized/fabulously-optimized/blob/main/INCLUDED-MODS.md#smooth
 [2]: https://wiki.download.fo/readme/give-up-optifine
-[3]: https:/wiki.download.fo/readme/free-cape
+[3]: https://wiki.download.fo/readme/free-cape
 [4]: https://github.com/Fabulously-Optimized/fabulously-optimized/blob/main/INCLUDED-MODS.md#functional
 [5]: https://github.com/Fabulously-Optimized/fabulously-optimized#downloads
-[6]: https://github.com/Fabulously-Optimized/fabulously-optimized/blob/main/CHANGELOG.md
+[6]: https://download.fo/changelog
 [7]: https://wiki.download.fo/readme/update-instructions
 [8]: https://wiki.download.fo/readme/adding-more-mods
-[9]: https://github.com/Fabulously-Optimized/fabulously-optimized
-[10]: https://wiki.download.fo/readme/language-support
-[11]: https://discord.gg/fabulously-optimized-859124104644788234
+[9]: https://download.fo/github
+[10]: https://download.fo/translate
+[11]: https://download.fo/discord
 [12]: https://wiki.download.fo
-[13]: https://github.com/Fabulously-Optimized/fabulously-optimized/blob/main/INCLUDED-MODS.md
-[14]: https://github.com/Fabulously-Optimized/fabulously-optimized/blob/main/CONTRIBUTING.md
-[15]: https://wiki.download.fo/readme/server-setup
-[16]: https://www.bisecthosting.com/clients/aff.php?aff=2604
-[17]: https://github.com/Fabulously-Optimized/fabulously-optimized#disclaimers`);
+[13]: https://download.fo/thanks
+[14]: https://wiki.download.fo/readme/server-setup
+[15]: https://download.fo/host
+[16]: https://download.fo/terms`);
 
 useSeoMeta({
   title: "Fabulously Optimized",
