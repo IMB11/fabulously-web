@@ -31,7 +31,7 @@ export default defineNuxtConfig({
         file: 'en_us.json'
       },
       {
-        code: 'et_ee',
+        code: 'et',
         name: 'Eesti keel',
         file: 'et_ee.json'
       }
