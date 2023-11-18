@@ -1,0 +1,19 @@
+{
+  "feature.performance.title": "Jõudlus",
+  "feature.performance.desc": "Fabulously Optimized on OptiFine'ist kiirem tänu [kaasaegsetele jõudlusmodidele][1] nagu Sodium, Lithium ja teised. Kaasatud modid on hoolikalt valitud, et need oleks sinu maailmadele ohutud ning pakuksid märgatavaid kiiruseparendusi mistahes seadmes.",
+  "feature.optifine-parity.title": "OptiFine'i-võrdsus",
+  "feature.optifine-parity.desc": "Fabulously Optimized [toetab enamikku OptiFine'i funktsioonidest][2], sealhulgas varjutajad, ühendatud tekstuurid ja suum. Kui su ressursipakil on öeldud \"OptiFine nõutud,\" töötab see ilmselt siin samuti. [Sa saad omale isegi tasuta keebi hankida!][3]",
+  "feature.feels-familiar.title": "Tundub tuttav",
+  "feature.feels-familiar.desc": "Fabulously Optimized sisaldab funktsioone, mis võimaldavad sul kogeda Minecrafti just nii, nagu seda mäletad, olenemata sellest, millist versiooni varem kasutasid. See tähendab, et saad [kasutada mängupulte, mängida sõpradega kohalikke maailmu, kuvada edasijõudmisi suures aknas ja palju muud][4].",
+  "feature.works-anywhere.title": "Töötab kõikjal",
+  "feature.works-anywhere.desc": "Fabulously Optimized ei sisalda sisumode, seega sa saad mängida mistahes maailmas või serveris. Kuigi sa saad paki mängimiseks kasutada mistahes mängukäivitajat, [soovitame me ja pakume tuge just neile, mis annavad parima kogemuse][5].",
+  "feature.up-to-date.title": "Kaasaegne",
+  "feature.up-to-date.desc": "Fabulously Optimized [saab kiireid uuendusi][6] ning on jätkuvalt üks esimestest modipakkidest, mis täieneb uusimatele Minecrafti versioonidele. [Modipaki uuendamine on lihtne][7] ning see säilitab võimalusel ka sinu modiseaded.",
+  "feature.built-on-fabric.title": "Põhineb Fabricul",
+  "feature.built-on-fabric.desc": "Fabulously Optimized kasutab Fabric modilaadurit, mis on kerge, kiire ja toetab paljusid mode. [Sa saad modipakki kasutada põhjana, kuhu oma mode lisada.][8]",
+  "feature.open-development.title": "Avatud arendus",
+  "feature.open-development.desc": "Fabulously Optimized [on avatud lähtekoodiga][9] ning seda on ka enamus selle modidest. Me tervitame kasutajate ettepanekuid ja teeme koostööd modiarendajatega, et luua parem kasutajakogemus kõigile.",
+  "feature.open-development.btn": "Vaata panustajaid",
+  "feature.helpful-community.title": "Abivalmis kogukond",
+  "feature.helpful-community.desc": "Meil on kasvav kogukond sõbralikest liikmetest, kellele meeldib modipakki arutada, [selle sisu tõlkida][10] ja üksteist aidata. [Liitu meiega juba täna!][11]"
+}
