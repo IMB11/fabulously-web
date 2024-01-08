@@ -213,15 +213,15 @@ const features: any = ref([
     <div class="buttons">
       <Button
         :large="true"
-        color="green"
-        @click="navigateTo(`/modrinth`, { external: true })"
-        >Modrinth</Button
-      >
-      <Button
-        :large="true"
         color="orange"
         @click="navigateTo(`/curseforge`, { external: true })"
         >CurseForge</Button
+      >
+      <Button
+        :large="true"
+        color="green"
+        @click="navigateTo(`/modrinth`, { external: true })"
+        >Modrinth</Button
       >
     </div>
     <!-- <DownloadSection class="download-card-fix" /> -->
