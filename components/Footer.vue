@@ -24,8 +24,8 @@ import { Avatar } from "omorphia";
         </div>
         <div class="link-row">
           <h4>{{ $t("footer.header.download") }}</h4>
-          <NuxtLink to="/modrinth">Modrinth</NuxtLink>
           <NuxtLink to="/curseforge">CurseForge</NuxtLink>
+          <NuxtLink to="/modrinth">Modrinth</NuxtLink>
         </div>
       </div>
     </div>
