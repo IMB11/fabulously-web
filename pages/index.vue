@@ -105,30 +105,15 @@ const features: any = ref([
       <p class="subtitle">{{ $t("content.home.columned-hero.subtitle") }}</p>
       <br />
       <div class="buttons">
-        <!-- <Button color="primary" @click="$refs.download_modal.show()"
-          ><DownloadIcon /> Download</Button
-        >
-        <Button
-          color="green"
-          @click="
-            navigateTo(`https://modrinth.com/modpack/fabulously-optimized`, {
-              external: true,
-              open: {
-                target: '_blank',
-              },
-            })
-          "
-          >View on Modrinth</Button
-        > -->
-        <Button
-          color="green"
-          @click="navigateTo(`/modrinth`, { external: true })"
-          ><DownloadIcon />Modrinth</Button
-        >
         <Button
           color="orange"
           @click="navigateTo(`/curseforge`, { external: true })"
           ><DownloadIcon />CurseForge</Button
+        >
+        <Button
+          color="green"
+          @click="navigateTo(`/modrinth`, { external: true })"
+          ><DownloadIcon />Modrinth</Button
         >
       </div>
     </div>
