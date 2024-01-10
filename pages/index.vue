@@ -105,30 +105,16 @@ const features: any = ref([
       <p class="subtitle">{{ $t("content.home.columned-hero.subtitle") }}</p>
       <br />
       <div class="buttons">
-        <!-- <Button color="primary" @click="$refs.download_modal.show()"
-          ><DownloadIcon /> Download</Button
+        <Button
+          color="orange"
+          @click="navigateTo(`/curseforge`, { external: true })"
+          ><DownloadIcon />CurseForge</Button
         >
         <Button
           color="green"
-          @click="
-            navigateTo(`https://modrinth.com/modpack/fabulously-optimized`, {
-              external: true,
-              open: {
-                target: '_blank',
-              },
-            })
-          "
-          >View on Modrinth</Button
-        > -->
-        <Button color="green" @click="navigateTo(`/modrinth`, { external: true })">
-          <DownloadIcon />Modrinth
-        </Button>
-        <Button color="orange" @click="navigateTo(`/curseforge`, { external: true })">
-          <DownloadIcon />CurseForge
-        </Button>
-        <Button @click="navigateTo(`/vanilla`, { external: true })">
-          <DownloadIcon /> Vanilla
-        </Button>
+          @click="navigateTo(`/modrinth`, { external: true })"
+          ><DownloadIcon />Modrinth</Button
+        >
       </div>
     </div>
     <div class="column graph__container">
@@ -209,8 +195,18 @@ const features: any = ref([
       {{ $t("content.home.download.subtitle") }}
     </p>
     <div class="buttons">
-      <Button :large="true" color="green" @click="navigateTo(`/modrinth`, { external: true })">Modrinth</Button>
-      <Button :large="true" color="orange" @click="navigateTo(`/curseforge`, { external: true })">CurseForge</Button>
+      <Button
+        :large="true"
+        color="orange"
+        @click="navigateTo(`/curseforge`, { external: true })"
+        >CurseForge</Button
+      >
+      <Button
+        :large="true"
+        color="green"
+        @click="navigateTo(`/modrinth`, { external: true })"
+        >Modrinth</Button
+      >
     </div>
     <!-- <DownloadSection class="download-card-fix" /> -->
   </div>
