@@ -120,19 +120,15 @@ const features: any = ref([
           "
           >View on Modrinth</Button
         > -->
-        <Button
-          color="green"
-          @click="navigateTo(`/modrinth`, { external: true })"
-          ><DownloadIcon />Modrinth</Button
-        >
-        <Button
-          color="orange"
-          @click="navigateTo(`/curseforge`, { external: true })"
-          ><DownloadIcon />CurseForge</Button
-        >
-        <Button @click="navigateTo(`/vanilla`, { external: true })"
-          ><DownloadIcon /> Vanilla</Button
-        >
+        <Button color="green" @click="navigateTo(`/modrinth`, { external: true })">
+          <DownloadIcon />Modrinth
+        </Button>
+        <Button color="orange" @click="navigateTo(`/curseforge`, { external: true })">
+          <DownloadIcon />CurseForge
+        </Button>
+        <Button @click="navigateTo(`/vanilla`, { external: true })">
+          <DownloadIcon /> Vanilla
+        </Button>
       </div>
     </div>
     <div class="column graph__container">
@@ -146,73 +142,57 @@ const features: any = ref([
         </div>
         <div class="item">
           <p class="pretitle">OptiFine</p>
-          <div class="bar"><p>56fps</p></div>
+          <div class="bar">
+            <p>56fps</p>
+          </div>
         </div>
         <div class="item">
           <p class="pretitle">{{ $t("content.home.graph.vanilla") }}</p>
-          <div class="bar"><p>49fps</p></div>
+          <div class="bar">
+            <p>49fps</p>
+          </div>
         </div>
       </div>
       <br />
       <div>
         <h3>
           Fabulously Optimized {{ $t("content.home.graph.title.is") }}
-          <span class="smaller__gradient"
-            >4x {{ $t("content.home.graph.title.quicker") }}</span
-          >{{ $t("content.home.graph.title.than") }} OptiFine.<br />
+          <span class="smaller__gradient">4x {{ $t("content.home.graph.title.quicker") }}</span>{{
+            $t("content.home.graph.title.than") }} OptiFine.<br />
         </h3>
       </div>
-      <small
-        >AMD Ryzen 5 2600 (12) @ 3.400GH and NVIDIA GeForce GTX 1060 3GB running
+      <small>AMD Ryzen 5 2600 (12) @ 3.400GH and NVIDIA GeForce GTX 1060 3GB running
         Minecraft 1.20.1, OptiFine for 1.20.1, Fabric Loader with Fabulously
-        Optimized 5.4.1 RD:8, Singleplayer, PLd</small
-      >
+        Optimized 5.4.1 RD:8, Singleplayer, PLd</small>
     </div>
   </div>
   <div class="centered-hero">
     <h1>{{ $t("content.home.features.title") }}</h1>
-    <iframe
-      width="560"
-      height="315"
-      :src="`https://www.youtube.com/embed/${$t(
-        'content.home.features.videoID'
-      )}`"
-      title="YouTube video player"
-      frameborder="0"
+    <iframe width="560" height="315" :src="`https://www.youtube.com/embed/${$t(
+      'content.home.features.videoID'
+    )}`" title="YouTube video player" frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen
-    ></iframe>
+      allowfullscreen></iframe>
     <div class="features">
       <div v-for="feature in features" class="feature-block">
         <div>
           <h1>
-            <component class="feature-icon" :is="feature.icon"></component
-            ><span>{{ $t(`feature.${feature.id}.title`) }}</span>
+            <component class="feature-icon" :is="feature.icon"></component><span>{{ $t(`feature.${feature.id}.title`)
+            }}</span>
           </h1>
-          <div
-            class="markdown-body"
-            v-html="
-              renderHighlightedString(
-                $t(`feature.${feature.id}.desc`) + featureLinks
-              )
-            "
-          ></div>
+          <div class="markdown-body" v-html="renderHighlightedString(
+              $t(`feature.${feature.id}.desc`) + featureLinks
+            )
+            "></div>
           <br />
-          <Button
-            v-if="feature.button"
-            :large="true"
-            :color="feature.button.color"
-            @click="
-              navigateTo(feature.button.href, {
-                external: feature.button.external,
-              })
-            "
-            ><component
-              :is="feature.button.icon"
-              v-if="feature.button.icon != undefined"
-            ></component>
-            {{ $t(`feature.${feature.id}.btn`) }}</Button
-          >
+          <Button v-if="feature.button" :large="true" :color="feature.button.color" @click="
+            navigateTo(feature.button.href, {
+              external: feature.button.external,
+            })
+            ">
+            <component :is="feature.button.icon" v-if="feature.button.icon != undefined"></component>
+            {{ $t(`feature.${feature.id}.btn`) }}
+          </Button>
         </div>
         <!-- <img
       v-if="features.indexOf(feature) % 2 === 0"
@@ -229,18 +209,8 @@ const features: any = ref([
       {{ $t("content.home.download.subtitle") }}
     </p>
     <div class="buttons">
-      <Button
-        :large="true"
-        color="green"
-        @click="navigateTo(`/modrinth`, { external: true })"
-        >Modrinth</Button
-      >
-      <Button
-        :large="true"
-        color="orange"
-        @click="navigateTo(`/curseforge`, { external: true })"
-        >CurseForge</Button
-      >
+      <Button :large="true" color="green" @click="navigateTo(`/modrinth`, { external: true })">Modrinth</Button>
+      <Button :large="true" color="orange" @click="navigateTo(`/curseforge`, { external: true })">CurseForge</Button>
     </div>
     <!-- <DownloadSection class="download-card-fix" /> -->
   </div>
@@ -253,6 +223,10 @@ const features: any = ref([
 
 h3 {
   color: var(--color-contrast) !important;
+}
+
+.bg-div {
+  background-image: url('/background.webp');
 }
 
 .features {
@@ -300,6 +274,7 @@ h3 {
     h1 {
       display: flex;
       gap: var(--gap-md);
+
       span {
         margin-top: auto;
         margin-bottom: auto;
