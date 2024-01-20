@@ -1,9 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import fs from "node:fs";
 import { redirects } from "./redirects";
 
 let redirectMap: any = {};
 for (const redirect of redirects) {
   redirectMap[redirect[0]] = { redirect: redirect[1] };
+}
+
+const languages = fs.readdirSync('./lang').map((file) => file.split('.')[0]);
+
+function capitalize(string: any) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 export default defineNuxtConfig({
@@ -24,18 +31,11 @@ export default defineNuxtConfig({
   },
   i18n: {
     vueI18n: 'old.i18n.config.ts',
-    locales: [
-      {
-        code: 'en',
-        name: 'English',
-        file: 'en.json'
-      },
-      {
-        code: 'et',
-        name: 'Eesti keel',
-        file: 'et.json'
-      }
-    ],
+    locales: languages.map((lang) => ({
+      code: lang, name: capitalize(new Intl.DisplayNames([lang], {
+        type: 'language'
+      }).of(lang)), file: `${lang}.json`
+    })),
     detectBrowserLanguage: {
       // If enabled, a cookie is set once a user has been redirected to his
       // preferred language to prevent subsequent redirections
