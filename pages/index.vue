@@ -105,16 +105,12 @@ const features: any = ref([
       <p class="subtitle">{{ $t("content.home.columned-hero.subtitle") }}</p>
       <br />
       <div class="buttons">
-        <Button
-          color="orange"
-          @click="navigateTo(`/curseforge`, { external: true })"
-          ><DownloadIcon />CurseForge</Button
-        >
-        <Button
-          color="green"
-          @click="navigateTo(`/modrinth`, { external: true })"
-          ><DownloadIcon />Modrinth</Button
-        >
+        <Button color="orange" @click="navigateTo(`/curseforge`, { external: true })">
+          <DownloadIcon />CurseForge
+        </Button>
+        <Button color="green" @click="navigateTo(`/modrinth`, { external: true })">
+          <DownloadIcon />Modrinth
+        </Button>
       </div>
     </div>
     <div class="column graph__container">
@@ -141,11 +137,10 @@ const features: any = ref([
       </div>
       <br />
       <div>
-        <h3>
-          Fabulously Optimized {{ $t("content.home.graph.title.is") }}
+        <!-- Fabulously Optimized {{ $t("content.home.graph.title.is") }}
           <span class="smaller__gradient">4x {{ $t("content.home.graph.title.quicker") }}</span>{{
-            $t("content.home.graph.title.than") }} OptiFine.<br />
-        </h3>
+            $t("content.home.graph.title.than") }} OptiFine.<br /> -->
+        <h3 v-html="$t('content.home.graph.subtitle')"></h3>
       </div>
       <small>AMD Ryzen 5 2600 (12) @ 3.400GH and NVIDIA GeForce GTX 1060 3GB running
         Minecraft 1.20.1, OptiFine for 1.20.1, Fabric Loader with Fabulously
@@ -160,7 +155,7 @@ const features: any = ref([
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       allowfullscreen></iframe>
     <div class="features">
-      <div v-for="feature in features" class="feature-block">
+      <div v-for=" feature  in features" class="feature-block">
         <div>
           <h1>
             <component class="feature-icon" :is="feature.icon"></component><span>{{ $t(`feature.${feature.id}.title`)
@@ -195,18 +190,8 @@ const features: any = ref([
       {{ $t("content.home.download.subtitle") }}
     </p>
     <div class="buttons">
-      <Button
-        :large="true"
-        color="orange"
-        @click="navigateTo(`/curseforge`, { external: true })"
-        >CurseForge</Button
-      >
-      <Button
-        :large="true"
-        color="green"
-        @click="navigateTo(`/modrinth`, { external: true })"
-        >Modrinth</Button
-      >
+      <Button :large="true" color="orange" @click="navigateTo(`/curseforge`, { external: true })">CurseForge</Button>
+      <Button :large="true" color="green" @click="navigateTo(`/modrinth`, { external: true })">Modrinth</Button>
     </div>
     <!-- <DownloadSection class="download-card-fix" /> -->
   </div>
