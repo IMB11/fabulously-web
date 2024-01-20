@@ -36,6 +36,9 @@ export default defineNuxtConfig({
         type: 'language'
       }).of(lang)), file: `${lang}.json`
     })),
+    compilation: {
+      strictMessage: false,
+    },
     detectBrowserLanguage: {
       // If enabled, a cookie is set once a user has been redirected to his
       // preferred language to prevent subsequent redirections
@@ -46,7 +49,7 @@ export default defineNuxtConfig({
       // Set to always redirect to value stored in the cookie, not just once
       alwaysRedirect: false,
       // If no locale for the browsers locale is a match, use this one as a fallback
-      fallbackLocale: 'en'
+      fallbackLocale: 'en',
     },
     lazy: true,
     strategy: 'no_prefix',
