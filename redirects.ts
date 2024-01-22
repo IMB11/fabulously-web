@@ -11,7 +11,7 @@ export const redirects = [
   ["/modrinth", "https://modrinth.com/modpack/fabulously-optimized"],
   ["/mods", "https://github.com/Fabulously-Optimized/fabulously-optimized/blob/main/INCLUDED-MODS.md"],
   ["/rate", "https://alternativeto.net/software/fabulously-optimized/about/"],
-  ["/terms", "https://github.com/Fabulously-Optimized/fabulously-optimized#disclaimers"],
+  ["/terms", "https://wiki.download.fo/readme/disclaimers"],
   ["/thanks", "https://github.com/Fabulously-Optimized/fabulously-optimized/blob/main/CONTRIBUTING.md"],
   ["/translate", "https://wiki.download.fo/readme/language-support"],
   ["/update", "https://wiki.download.fo/readme/update-instructions"],
